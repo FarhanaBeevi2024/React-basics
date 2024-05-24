@@ -1,0 +1,278 @@
+REACT
+-----
+
+-> React is an open-source web application.
+-> It is developed and maintained by meta-Facebook.
+
+features:-
+---------
+* used for creating UI (interacting point where the user interacts with application USER INTERFACE UI).
+
+* React is a Library
+
+*It's a single-page application - index.html.
+	- only one-page render in the browser
+	- all other pages should have a direct or indirect connection with the page that loads in the browser(index.html)
+
+* Declarative application
+
+* React does not access real DOM.
+
+ Virtual DOM
+  ----------
+
+- Its a copy of real DOM.
+- React
+
+- Diffining
+------------
+The process of comparing the virtual DOM with the real DOM.
+
+  - Recounciliation :
+	The process of updating the real DOM after comparing it with the virtual DOM.
+ 
+* Pure Function :
+
+  Output should only demand on arguments.(it should not depends on the data from outside)
+
+
+	function functionname(){
+
+	   js code
+
+        }
+	return(){ - output of the function
+
+	   jsx - display
+
+	}
+
+	}
+
+
+
+* Language used in react is jsx.
+
+   * Transpiling :
+	- conversion of jsx into browser understanding language.
+	- done by babel,its a library.
+
+* Data sharing
+    - uni-directional(parent to child).
+    - props - it is a predefined object for data sharing between parent and child.
+
+
+
+How to create a react application
+-----------------------------------
+
+commands :
+
+1) npx create -react-app projectname
+2) cd projectname
+3) code .
+4) npm start - runn the project
+
+files :
+
+1) README.md - description of the project.
+2) package.json  - npm configuration.
+ 	- dependencies - installed libraries name.
+	- scripts
+3) package.lock.json - installed libraries versions.
+4) node_modules - entire of copy of the installed libraries.
+5) .gitignore - files that have to be ignore while push the project to git.
+
+6)public folder - files that can be accessed throughout the application.
+	- index.html - only file that run in the browser.
+
+
+
+Component
+-----------
+- it is the basic unit of UI.
+- Component name should starts with capital letter.
+- with extension as .js or .jsx.
+- to place a component inside another file - use component name tag ( self closing tag)
+
+
+- if any component exported in App.js, it must imported in index.js
+
+css - inline
+if css is external, give name as componentName.css
+
+- all tags inside the return function should be placed inside a single tag or empty fragment.
+
+style-css
+--------
+
+- external css:
+	- file with extension as .css
+	- import on those file where this css style have to applied.
+
+- inline css
+
+	normal inline css : style="property:value;"
+
+	here it is;
+
+	style={{property : value,}}
+
+- modules.css
+-------------
+
+- must create in src folder.
+- with extension as .module.css
+- accessible throughout the project.
+- can store in a variable.
+- inorder to use this module in another file we need to import the module.
+
+
+components in react are of two types;
+
+1) functional component	/stateless components
+	functional - basic structure
+
+2) class component / stateful components
+	class - basic structure
+
+
+
+Data Sharing
+------------
+- using props - predefined object
+- key:value - enclosed in curly bracket
+- data sharing between parent and child component (direction - parent-child)
+
+
+object destructuring
+---------------------
+ 
+placing only the keys inside a curly bracket.
+
+
+Event Handling
+---------------
+
+ - Events are those actions which leads to a function....
+
+- click event
+
+   - function with arguments
+	click = {() =>{functionname(arg)}}
+
+   - functions without arguments
+
+
+
+click={functionname}
+
+
+onchange ={(e)=> functionname(e)}
+
+
+conditional rendering
+---------------------
+
+1) ternary operator - condition?true:false
+2) truthy operator - condition && true
+
+
+state
+-----
+- by default present in class component.
+- is an object used to store properties (values) of a react class component.
+- if the value in the state changes the whole component render.
+- whereas variables store local data that doesnot effect the component rerender.
+
+- setState() - function to change the value of a state.
+
+
+
+Life cycle of react class component
+-----------------------------------
+
+basic three phases :-
+
+  1) mounting phase - creation of components
+
+	-> constructor() - to initialize the state
+
+	-> getDerivedStateFromProps() - used to modify the state value using props.
+		- it returns an object to update the state or null to indicate no state updation.
+
+	-> render() - returns jsx that represents the component ouput.
+
+	-> componentDidMount() - last method of this phase - network call - API Call- side effects 
+
+
+  2) updating phase - updation of components
+
+	-> getDerivedStateFromProps() - used to modify the state value using props.
+		- it returns an object to update the state or null to indicate no state updation.
+
+	-> shouldComponentUpdate() - this method is invoked before rendering when a new props or state are being received.
+		-it returns true if the component should update else return false.
+
+	->render() - returns jsx that represents the component ouput.
+	
+	-> getsnapShotBeforeUpdate() - this method is call right before the changes from the virtual DOM are to be reflected in the actual DOM.
+
+	->componentDidUpdate() - 
+
+
+
+  3) unmounting phase - deletion of the components
+
+	- componentWillUnmount() - network calls will be cancelled, clean the DOM aswell.
+
+  4)ERROR Handling Phase
+
+	1) getDerivedStateFromError() - this method is called when there is an error during the render.
+
+	2) componentDidCatch() - call after an error been thrown - log
+
+
+ HOOKS
+------
+
+- hooks are nothing but functions
+
+Rules to use Hooks:-
+-------------------
+
+- in order to use an hook in functional component, it need to be imported in the functional component at the top.
+
+- can call hook at the top section of the function.
+
+- hooks cannot be called conditionally.
+
+
+
+- two types of Hooks :-
+	1) predefined HOOKS
+		a)useState() 
+			- to provide state to a functional component.
+			- return state, and a function to change the state.
+
+syntax:-
+	const[state, functionName] = useState(initial value of state)
+
+	2) custom HOOKS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
